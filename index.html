@@ -2,15 +2,36 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vanilla App Template</title>
+    <title>goit-js-hw-12</title>
     
-    <script type="module" crossorigin src="/vanilla-app-template/commonHelpers.js"></script>
-    <link rel="stylesheet" href="/vanilla-app-template/assets/index-10c40100.css">
+    <script type="module" crossorigin src="/goit-js-hw-12/commonHelpers.js"></script>
+    <link rel="modulepreload" crossorigin href="/goit-js-hw-12/assets/vendor-5401a4b0.js">
+    <link rel="stylesheet" href="/goit-js-hw-12/assets/vendor-cf6910df.css">
+    <link rel="stylesheet" href="/goit-js-hw-12/assets/index-738ecc6c.css">
   </head>
   <body>
-    
+    <div id="loader" class="loader" style="display: none"></div>
+    <span class="loader"></span>
+    <div>
+      <form id="searchForm" class="form-box">
+        <input
+          class="input-box"
+          type="text"
+          id="searchInput"
+          placeholder="Search images..."
+        />
+        <button class="form-btn" type="submit">Search</button>
+      </form>
+    </div>
+    <div id="gallery" class="gallery"></div>
+
+    <button id="loadMoreBtn" class="load-btn" style="display: none">
+      Load more
+    </button>
+    <div id="endMessage" style="display: none">
+      We're sorry, but you've reached the end of search results.
+    </div>
     
   </body>
 </html>
