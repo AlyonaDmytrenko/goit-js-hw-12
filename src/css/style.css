@@ -86,3 +86,7 @@ img {
   color: #fff;
   cursor: pointer;
 }
+
+.load-btn:hover {
+  background-color: #6c8cff;
+}

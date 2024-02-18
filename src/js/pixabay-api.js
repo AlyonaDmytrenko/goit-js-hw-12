@@ -4,9 +4,10 @@ import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 import axios from 'axios';
 
-let currentPage = 1;
-let currentQuery = '';
 export async function someFunction() {
+  let currentPage = 1;
+  let currentQuery = '';
+
   const searchForm = document.getElementById('searchForm');
   const searchInput = document.getElementById('searchInput');
   const loader = document.getElementById('loader');
@@ -31,7 +32,7 @@ export async function someFunction() {
     loadMoreBtn.style.display = 'none';
     endMessage.style.display = 'none';
     currentQuery = query;
-    currentPage = 1; // Reset page number for new search
+    currentPage = 1;
     try {
       const data = await fetchImages(currentQuery, currentPage);
       handleImageData(data);
@@ -49,7 +50,7 @@ export async function someFunction() {
     try {
       const data = await fetchImages(currentQuery, currentPage);
       handleImageData(data);
-      smoothScroll(); // Smooth scroll after loading more images
+      smoothScroll();
     } catch (error) {
       iziToast.error({
         title: 'Error',
@@ -113,8 +114,8 @@ export async function someFunction() {
       .querySelector('a')
       .getBoundingClientRect().height;
     window.scrollBy({
-      top: cardHeight * 2, // Scroll down by two card heights
-      behavior: 'smooth', // Smooth scrolling animation
+      top: cardHeight * 2,
+      behavior: 'smooth',
     });
   }
 }
